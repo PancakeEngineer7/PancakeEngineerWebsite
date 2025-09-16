@@ -1,0 +1,78 @@
+/* Basic reset and variables */
+:root{
+	--red: #d32f2f;
+	--bg: #f7f7f7;
+	--text: #111;
+	--muted: #555;
+	--container-max: 980px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--text);background:var(--bg)}
+.container{max-width:var(--container-max);margin:0 auto;padding:0 16px}
+
+/* Make page a column flex layout so footer can stick to bottom */
+body{display:flex;flex-direction:column;min-height:100vh}
+main{flex:1}
+
+/* Header */
+.site-header{background:var(--red);color:#fff;position:sticky;top:0;z-index:10}
+.header-inner{display:flex;align-items:center;height:64px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px}
+.site-title{font-size:1.25rem;margin:0}
+
+/* Main hero */
+.main-content{padding:36px 0}
+.hero{display:flex;align-items:center;gap:28px}
+.hero-image{flex:0 0 auto}
+.hero-image img,.hero-avatar{width:300px;max-width:40vw;height:300px;object-fit:cover;border-radius:12px;display:block}
+.hero-text h2{margin:0 0 8px 0;font-size:1.75rem}
+.sub{margin:0;color:var(--muted)}
+
+/* Interests */
+.interests{margin-top:48px;text-align:center}
+.interests-title{font-size:1.5rem;margin:0 0 8px 0}
+.interests-list{margin:0;color:var(--muted);font-weight:600}
+
+/* Footer */
+.site-footer{background:#222;color:#fff;padding:20px 0;margin-top:48px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.footer-inner p{margin:0}
+.social-links{list-style:none;padding:0;margin:0;display:flex;gap:12px}
+.social-links a{color:#fff;text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.social-links a:hover{border-bottom-color:#fff}
+
+/* Responsive adjustments */
+@media (max-width:720px){
+	.hero{flex-direction:column;align-items:flex-start}
+	.hero-image img,.hero-avatar{width:180px;height:180px;max-width:100%}
+	.footer-inner{flex-direction:column;align-items:flex-start}
+}
+
+/* Gallery */
+.gallery{margin-top:48px}
+.gallery-title{font-size:1.25rem;margin:0 0 6px 0;text-align:left}
+.gallery-sub{margin:0 0 16px 0;color:var(--muted)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,200px);justify-content:center;gap:12px}
+.gallery-grid .gallery-item{width:200px}
+.gallery-item{background:transparent;border:0;padding:0;cursor:pointer;border-radius:8px;overflow:hidden}
+.gallery-item img{width:100%;height:140px;object-fit:cover;display:block}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1000}
+.modal[aria-hidden="false"]{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+.modal-panel{position:relative;background:#fff;color:#111;max-width:900px;width:calc(100% - 40px);max-height:90vh;overflow:auto;border-radius:8px;padding:16px;z-index:10;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.modal-close{position:absolute;right:10px;top:6px;border:0;background:transparent;font-size:26px;line-height:1;cursor:pointer}
+.modal-panel img{width:100%;height:auto;border-radius:6px;display:block;margin-bottom:12px}
+.modal-panel h4{margin:0 0 8px 0}
+.modal-panel p{margin:0;color:var(--muted)}
+
+@media (max-width:720px){
+	.gallery-grid{grid-template-columns:repeat(auto-fill,140px)}
+	.gallery-grid .gallery-item{width:140px}
+	.gallery-item img{height:120px}
+	.modal-panel{padding:12px}
+}
+
