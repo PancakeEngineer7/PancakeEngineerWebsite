@@ -18,61 +18,39 @@
                         <path d="M7 13c1.333-2 3.333-2 4.667 0 1.333-2 3.333-2 4.667 0" stroke="#e53935" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     -->
+                        <img src="pancakeengineer.jpg" alt="Pancake Engineer logo" class="logo-img">
                 </div>
                 <h1 class="site-title">Pancake Engineer</h1>
             </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                        <!-- <li><a href="#" id="nav-contact">Contact</a></li> -->
+                </ul>
+            </nav>
         </div>
     </header>
 
     <main class="container main-content">
-        <section class="hero">
-            <div class="hero-image">
-                <!-- Use the local pancakeengineer.jpg (square image). If you'd like a different filename, update the src here. -->
-                <img src="pancakeengineer.jpg" alt="Pancake Engineer logo or avatar" class="hero-avatar">
-            </div>
-            <div class="hero-text">
-                <h2>Hello, I'm Pancake Engineer!</h2>
-                <p class="sub">Autistic // Unreal Engine Developer // Web Developer // Blender Artist</p>
+        
+
+            <section class="banner">
+                <img src="pancakesheader.jpg" alt="Pancakes Header" class="banner-img">
+                <div class="banner-overlay">
+                    <h2 class="banner-hello">Hello, I'm Pancake Engineer!</h2>
+                    <p class="banner-sub">Autistic // Unreal Engine Developer // Web Developer // Blender Artist</p>
+                </div>
+            </section>
+
+            <section class="home-links">
+            <p>Welcome — I develop in Unreal Engine, make 3D art with Blender and build websites. See my work:</p>
+            <div class="home-buttons">
+                <a class="btn" href="projects.html">See Projects</a>
+                <a class="btn" href="about.html">About Me</a>
             </div>
         </section>
-
-        <section class="interests">
-            <h3 class="interests-title">My Intrests:</h3>
-            <p class="interests-list">Dragons, HTTYD, Space, Technology</p>
-        </section>
-
-        <section class="gallery">
-            <h3 class="gallery-title">My stuff:</h3>
-            <p class="gallery-sub">A selection of my renders, Blender works and Unreal Engine screenshots. Click any item for details.</p>
-            <div class="gallery-grid">
-                <!-- Example items: replace src and data-* attributes with your images and info -->
-                <button class="gallery-item" data-title="My First Render" data-desc="This was my very first render, I was very proud of myself when I made it, I hope I have a really nice journey ahead of me!" aria-label="Open My First Render">
-                    <img src="stuff/FirstRender.png" alt="My First Render thumbnail">
-                </button>
-                <!--
-                <button class="gallery-item" data-title="HTTYD Scene" data-desc="A scene inspired by How To Train Your Dragon" aria-label="Open HTTYD Scene">
-                    <img src="https://via.placeholder.com/400x300.png?text=Scene+2" alt="HTTYD scene thumbnail">
-                </button>
-                <button class="gallery-item" data-title="Space Screenshot" data-desc="Unreal Engine space environment screenshot" aria-label="Open Space Screenshot">
-                    <img src="https://via.placeholder.com/400x300.png?text=Space+3" alt="Space screenshot thumbnail">
-                </button>
-                <button class="gallery-item" data-title="Technology UI" data-desc="UI mockup and tech demo" aria-label="Open Technology UI">
-                    <img src="https://via.placeholder.com/400x300.png?text=Tech+4" alt="Technology UI thumbnail">
-                </button>
-                -->
-            </div>
-        </section>
-
-        <!-- Modal viewer for gallery items -->
-        <div id="gallery-modal" class="modal" aria-hidden="true">
-            <div class="modal-backdrop" data-close></div>
-            <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-                <button class="modal-close" data-close aria-label="Close">×</button>
-                <img id="modal-image" src="#" alt="">
-                <h4 id="modal-title"></h4>
-                <p id="modal-desc"></p>
-            </div>
-        </div>
     </main>
 
     <footer class="site-footer">
@@ -82,44 +60,10 @@
                 <li><a href="#" aria-label="Discord">Discord: @nightfurycody</a></li>
                 <li><a href="https://www.youtube.com/@pancake-engineer" aria-label="YouTube">YouTube</a></li>
                 <li><a href="https://x.com/PancakeEngineer" aria-label="X">X (Twitter)</a></li>
-                <li><a href="https://bsky.app/profile/ryantravis.link" aria-label="Bluesky">Bluesky</a></li>
+                    <!-- <li><a href="https://bsky.app/profile/ryantravis.link" aria-label="Bluesky">Bluesky</a></li> -->
             </ul>
         </div>
     </footer>
-    <script>
-    // Gallery modal logic
-    (() => {
-        const modal = document.getElementById('gallery-modal');
-        const modalImage = document.getElementById('modal-image');
-        const modalTitle = document.getElementById('modal-title');
-        const modalDesc = document.getElementById('modal-desc');
-
-        function openModal(imgSrc, title, desc, imgAlt) {
-            modalImage.src = imgSrc;
-            modalImage.alt = imgAlt || title || '';
-            modalTitle.textContent = title || '';
-            modalDesc.textContent = desc || '';
-            modal.setAttribute('aria-hidden', 'false');
-        }
-
-        function closeModal() {
-            modal.setAttribute('aria-hidden', 'true');
-            modalImage.src = '';
-        }
-
-        document.querySelectorAll('.gallery-item').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const img = btn.querySelector('img');
-                openModal(img.src, btn.dataset.title, btn.dataset.desc, img.alt);
-            });
-        });
-
-        document.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
-
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
-    })();
-    </script>
+    <!-- Gallery removed from homepage; modal script intentionally omitted -->
 </body>
 </html>

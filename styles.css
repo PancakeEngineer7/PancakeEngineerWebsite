@@ -22,13 +22,38 @@ main{flex:1}
 .logo{width:40px;height:40px}
 .site-title{font-size:1.25rem;margin:0}
 
+.logo-img{width:40px;height:40px;object-fit:cover;border-radius:6px}
+
+/* Navigation */
+.main-nav{margin-left:auto}
+.main-nav ul{display:flex;gap:12px;align-items:center;margin:0;padding:0;list-style:none}
+.main-nav a{color:#fff;text-decoration:none;padding:6px 8px;border-radius:6px}
+.main-nav a:hover{background:rgba(255,255,255,0.08)}
+
+/* Back button in header for project detail pages */
+.back-btn{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#fff;background:rgba(255,255,255,0.06);border-radius:8px;padding:8px 10px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px}
+.back-btn svg{color:#fff;width:20px;height:20px}
+.back-btn:hover{background:rgba(255,255,255,0.12)}
+.header-inner{position:relative}
+
+
 /* Main hero */
-.main-content{padding:36px 0}
+.main-content{padding:0 0 36px 0}
 .hero{display:flex;align-items:center;gap:28px}
 .hero-image{flex:0 0 auto}
 .hero-image img,.hero-avatar{width:300px;max-width:40vw;height:300px;object-fit:cover;border-radius:12px;display:block}
 .hero-text h2{margin:0 0 8px 0;font-size:1.75rem}
 .sub{margin:0;color:var(--muted)}
+
+/* Banner (full-width header image) */
+.banner{position:relative;margin:0 calc(-1 * (100vw - var(--container-max)) / 2);}
+.banner-img{width:100vw;height:48vh;object-fit:cover;display:block}
+.banner-overlay{position:absolute;left:24px;bottom:18px;color:#fff;text-shadow:0 3px 12px rgba(0,0,0,0.6)}
+.banner-hello{margin:0;font-size:2rem;font-weight:600}
+.banner-sub{margin:6px 0 0 0;font-weight:300}
+
+/* Thin sleek font for interests and headings */
+.interests-title,.gallery-title{font-weight:300;letter-spacing:0.6px}
 
 /* Interests */
 .interests{margin-top:48px;text-align:center}
@@ -59,6 +84,13 @@ main{flex:1}
 .gallery-item{background:transparent;border:0;padding:0;cursor:pointer;border-radius:8px;overflow:hidden}
 .gallery-item img{width:100%;height:140px;object-fit:cover;display:block}
 
+/* Projects list and detail */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,220px));gap:16px;margin-top:16px;justify-content:center}
+.project-card img{width:220px;height:140px;object-fit:cover;border-radius:8px;display:block;margin:0 auto}
+.project-card{display:block;text-align:center}
+.project-detail .project-media{display:flex;justify-content:center;margin:18px 0}
+.project-detail .project-media img{max-width:720px;width:100%;height:auto;border-radius:8px}
+
 /* Modal */
 .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1000}
 .modal[aria-hidden="false"]{display:flex}
@@ -75,4 +107,11 @@ main{flex:1}
 	.gallery-item img{height:120px}
 	.modal-panel{padding:12px}
 }
+
+/* Homepage simple links */
+.home-links{margin-top:32px;text-align:center}
+.home-links p{margin-bottom:12px;color:var(--muted)}
+.home-buttons{display:flex;justify-content:center;gap:12px}
+.btn{background:var(--red);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none}
+.btn:hover{opacity:0.95}
 
