@@ -116,8 +116,37 @@ main{flex:1}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px}
 .project-card img{width:100%;height:auto;object-fit:cover;border-radius:8px;display:block}
 .project-card{display:block;text-align:center}
+
 .project-detail .project-media{display:flex;justify-content:center;margin:18px 0}
 .project-detail .project-media img{max-width:720px;width:100%;height:auto;border-radius:8px}
+
+/* Expand/collapse project details */
+.project-detail{
+	overflow:hidden;
+	transition:max-height 320ms ease, opacity 220ms ease, padding 220ms ease;
+}
+.project-detail:not(.open){
+	max-height:0;
+	opacity:0;
+	padding-top:0;
+	padding-bottom:0;
+}
+.project-detail.open{
+	max-height:2000px; /* big enough to fit content */
+	opacity:1;
+}
+
+.proj-toggle{
+	margin-top:8px;
+	display:inline-block;
+	background:transparent;
+	color:var(--red);
+	border:1px solid var(--red);
+	padding:6px 10px;
+	border-radius:8px;
+	cursor:pointer;
+}
+.proj-toggle[aria-expanded="true"]{background:var(--red);color:#fff}
 
 /* Modal */
 .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1000}
